@@ -76,34 +76,66 @@ mark {
 }
 
 
-.latest-posts{
+.latest-posts {
     list-style-type: none;
+    padding-left: 0px;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
-.tags{
-    background: #007BFF;
-    color: #FFF;
+.tags {
     border: none;
     padding: 3px 5px;
     border-radius: 5px;
+    background: #007BFF;
+    color: #FFF;
 }
 
-.tags:hover{
+.tags-latest-post {
+    border: none;
+    padding: 3px 5px;
+    border-radius: 5px;
+    background: #FFF;
+    color: #000;
+}
+
+.tags:hover {
     color: #FFF;
     background: #00B444;
+    cursor: pointer;
 }
 
-.end-of-post{
+/* .tags-latest-post:hover {
+    cursor: pointer;
+    background: #007BFF;
+    color: #FFF;
+    cursor: pointer;
+} */
+
+.end-of-post {
     font-weight: bold;
     padding-top: 5px;
     margin: auto;
 }
 
 .lnr,
-.txt1.p-b-20{
+.txt1.p-b-20 {
     color: #000;
+}
+
+.btn-feed {
+    border: none;
+    color: #ff8800;
+    cursor: pointer;
+    float: right;
+}
+
+.fa-latest-posts{
+    padding-left: 15px;
+}
+
+.fa-comments{
+    padding-right: 5px;
 }
