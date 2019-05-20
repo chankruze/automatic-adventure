@@ -1,33 +1,64 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-05-19T09:03:16+05:30</updated><id>/feed.xml</id><title type="html">GEEKOFIA</title><subtitle>Blogs</subtitle><entry><title type="html">Apples</title><link href="/2019/05/10/apples.html" rel="alternate" type="text/html" title="Apples" /><published>2019-05-10T04:33:02+05:30</published><updated>2019-05-10T04:33:02+05:30</updated><id>/2019/05/10/apples</id><content type="html" xml:base="/2019/05/10/apples.html">&lt;p&gt;An apple is a sweet, edible fruit produced by an apple tree.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-05-20T11:16:11+05:30</updated><id>/feed.xml</id><title type="html">GEEKOFIA</title><subtitle>Blogs</subtitle><entry><title type="html">Workaround to fix unexpected token at start of statement error with clang</title><link href="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" rel="alternate" type="text/html" title="Workaround to fix unexpected token at start of statement error with clang" /><published>2019-05-20T07:27:34+05:30</published><updated>2019-05-20T07:27:34+05:30</updated><id>/patches/2019/05/20/unexpected-token-at-start-of-statement-patch</id><content type="html" xml:base="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html">&lt;h4 id=&quot;the-problem&quot;&gt;The problem&lt;/h4&gt;
 
-&lt;p&gt;Apple trees are cultivated worldwide, and are the most widely grown species in
-the genus Malus. The tree originated in Central Asia, where its wild ancestor,
-Malus sieversii, is still found today. Apples have been grown for thousands of
-years in Asia and Europe, and were brought to North America by European
-colonists.&lt;/p&gt;</content><author><name>jill</name></author><summary type="html">An apple is a sweet, edible fruit produced by an apple tree.</summary></entry><entry><title type="html">Kiwifruit</title><link href="/2019/05/10/kiwifruit.html" rel="alternate" type="text/html" title="Kiwifruit" /><published>2019-05-10T04:33:02+05:30</published><updated>2019-05-10T04:33:02+05:30</updated><id>/2019/05/10/kiwifruit</id><content type="html" xml:base="/2019/05/10/kiwifruit.html">&lt;p&gt;Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible
-berry of several species of woody vines in the genus Actinidia.&lt;/p&gt;
+&lt;p&gt;Following snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying &lt;code class=&quot;highlighter-rouge&quot;&gt;error: unexpected token at start of statement&lt;/code&gt;.
+&lt;!--excerpt--&gt;&lt;/p&gt;
+&lt;pre&gt;
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;chankruze@hpnightowl&lt;/b&gt;&lt;/font&gt;:&lt;font color=&quot;#3465A4&quot;&gt;&lt;b&gt;~/N00bKernel&lt;/b&gt;&lt;/font&gt;$ ccache make ARCH=arm64 CC=clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE_PREFIX=aarch64-linux-gnu-
+@@@@@@@@@@@ 111 OPPO_BUILD_CUSTOMIZE is 
+  CHK     include/config/kernel.release
+  CHK     include/generated/uapi/linux/version.h
+  CHK     include/generated/utsrelease.h
+  CC      kernel/bounds.s
+&lt;b&gt;kernel/bounds.c:18:2: &lt;/b&gt;&lt;font color=&quot;#CC0000&quot;&gt;&lt;b&gt;error: &lt;/b&gt;&lt;/font&gt;&lt;b&gt;unexpected token at start of statement&lt;/b&gt;
+        DEFINE(NR_PAGEFLAGS, __NR_PAGEFLAGS);
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;        ^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;include/linux/kbuild.h:5:25: &lt;/b&gt;&lt;font color=&quot;#2E3436&quot;&gt;&lt;b&gt;note: &lt;/b&gt;&lt;/font&gt;expanded from macro &amp;apos;DEFINE&amp;apos;
+        asm volatile(&amp;quot;\n-&amp;gt;&amp;quot; #sym &amp;quot; %0 &amp;quot; #val : : &amp;quot;i&amp;quot; (val))
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;                        ^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;&amp;lt;inline asm&amp;gt;:2:1: &lt;/b&gt;&lt;font color=&quot;#2E3436&quot;&gt;&lt;b&gt;note: &lt;/b&gt;&lt;/font&gt;instantiated into assembly here
+-&amp;gt;NR_PAGEFLAGS $21 __NR_PAGEFLAGS
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;kernel/bounds.c:19:2: &lt;/b&gt;&lt;font color=&quot;#CC0000&quot;&gt;&lt;b&gt;error: &lt;/b&gt;&lt;/font&gt;&lt;b&gt;unexpected token at start of statement&lt;/b&gt;
+        DEFINE(MAX_NR_ZONES, __MAX_NR_ZONES);
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;        ^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;include/linux/kbuild.h:5:25: &lt;/b&gt;&lt;font color=&quot;#2E3436&quot;&gt;&lt;b&gt;note: &lt;/b&gt;&lt;/font&gt;expanded from macro &amp;apos;DEFINE&amp;apos;
+        asm volatile(&amp;quot;\n-&amp;gt;&amp;quot; #sym &amp;quot; %0 &amp;quot; #val : : &amp;quot;i&amp;quot; (val))
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;                        ^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;&amp;lt;inline asm&amp;gt;:2:1: &lt;/b&gt;&lt;font color=&quot;#2E3436&quot;&gt;&lt;b&gt;note: &lt;/b&gt;&lt;/font&gt;instantiated into assembly here
+-&amp;gt;MAX_NR_ZONES $3 __MAX_NR_ZONES
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;kernel/bounds.c:21:2: &lt;/b&gt;&lt;font color=&quot;#CC0000&quot;&gt;&lt;b&gt;error: &lt;/b&gt;&lt;/font&gt;&lt;b&gt;unexpected token at start of statement&lt;/b&gt;
+        DEFINE(NR_CPUS_BITS, ilog2(CONFIG_NR_CPUS));
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;        ^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;include/linux/kbuild.h:5:25: &lt;/b&gt;&lt;font color=&quot;#2E3436&quot;&gt;&lt;b&gt;note: &lt;/b&gt;&lt;/font&gt;expanded from macro &amp;apos;DEFINE&amp;apos;
+        asm volatile(&amp;quot;\n-&amp;gt;&amp;quot; #sym &amp;quot; %0 &amp;quot; #val : : &amp;quot;i&amp;quot; (val))
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;                        ^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;&amp;lt;inline asm&amp;gt;:2:1: &lt;/b&gt;&lt;font color=&quot;#2E3436&quot;&gt;&lt;b&gt;note: &lt;/b&gt;&lt;/font&gt;instantiated into assembly here
+-&amp;gt;NR_CPUS_BITS $3 ilog2(CONFIG_NR_CPUS)
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;kernel/bounds.c:23:2: &lt;/b&gt;&lt;font color=&quot;#CC0000&quot;&gt;&lt;b&gt;error: &lt;/b&gt;&lt;/font&gt;&lt;b&gt;unexpected token at start of statement&lt;/b&gt;
+        DEFINE(SPINLOCK_SIZE, sizeof(spinlock_t));
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;        ^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;include/linux/kbuild.h:5:25: &lt;/b&gt;&lt;font color=&quot;#2E3436&quot;&gt;&lt;b&gt;note: &lt;/b&gt;&lt;/font&gt;expanded from macro &amp;apos;DEFINE&amp;apos;
+        asm volatile(&amp;quot;\n-&amp;gt;&amp;quot; #sym &amp;quot; %0 &amp;quot; #val : : &amp;quot;i&amp;quot; (val))
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;                        ^&lt;/b&gt;&lt;/font&gt;
+&lt;b&gt;&amp;lt;inline asm&amp;gt;:2:1: &lt;/b&gt;&lt;font color=&quot;#2E3436&quot;&gt;&lt;b&gt;note: &lt;/b&gt;&lt;/font&gt;instantiated into assembly here
+-&amp;gt;SPINLOCK_SIZE $4 sizeof(spinlock_t)
+&lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;^&lt;/b&gt;&lt;/font&gt;
+4 errors generated.
+Kbuild:45: recipe for target &amp;apos;kernel/bounds.s&amp;apos; failed
+make[1]: *** [kernel/bounds.s] Error 1
+Makefile:1129: recipe for target &amp;apos;prepare0&amp;apos; failed
+make: *** [prepare0] Error 2
+&lt;/pre&gt;
 
-&lt;p&gt;The most common cultivar group of kiwifruit is oval, about the size of a large
-hen’s egg (5–8 cm (2.0–3.1 in) in length and 4.5–5.5 cm (1.8–2.2 in) in
-diameter). It has a fibrous, dull greenish-brown skin and bright green or
-golden flesh with rows of tiny, black, edible seeds. The fruit has a soft
-texture, with a sweet and unique flavor.&lt;/p&gt;</content><author><name>ted</name></author><summary type="html">Kiwifruit (often abbreviated as kiwi), or Chinese gooseberry is the edible berry of several species of woody vines in the genus Actinidia.</summary></entry><entry><title type="html">Bananas</title><link href="/2019/05/10/bananas.html" rel="alternate" type="text/html" title="Bananas" /><published>2019-05-10T04:33:02+05:30</published><updated>2019-05-10T04:33:02+05:30</updated><id>/2019/05/10/bananas</id><content type="html" xml:base="/2019/05/10/bananas.html">&lt;p&gt;A banana is an edible fruit – botanically a berry – produced by several kinds
-of large herbaceous flowering plants in the genus Musa.&lt;/p&gt;
+&lt;h4 id=&quot;how-to-fix&quot;&gt;How to fix&lt;/h4&gt;
 
-&lt;p&gt;In some countries, bananas used for cooking may be called “plantains”,
-distinguishing them from dessert bananas. The fruit is variable in size, color,
-and firmness, but is usually elongated and curved, with soft flesh rich in
-starch covered with a rind, which may be green, yellow, red, purple, or brown
-when ripe.&lt;/p&gt;</content><author><name>chankruze</name></author><summary type="html">A banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="/jekyll/update/2019/05/10/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-05-10T04:33:02+05:30</published><updated>2019-05-10T04:33:02+05:30</updated><id>/jekyll/update/2019/05/10/welcome-to-jekyll</id><content type="html" xml:base="/jekyll/update/2019/05/10/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;p&gt;This was due to the characters used in &lt;code class=&quot;highlighter-rouge&quot;&gt;Kbuild&lt;/code&gt; and fixed in commit &lt;a href=&quot;https://github.com/N00bKernel/stanlee/commit/af41c50628c23bcfbe1f56756469c2e4085bc1d0&quot;&gt;af41c50628c23bcfbe1f56756469c2e4085bc1d0&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;h4 id=&quot;files-to-download&quot;&gt;Files to download&lt;/h4&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry></feed>
+&lt;p&gt;Below patch(es) can be applied to fix this issue:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://raw.githubusercontent.com/chankruze/studious-waddle/master/chankruze-001-kbuild-clang_macro_define.patch&quot;&gt;chankruze-001-kbuild-clang_macro_define.patch&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>chankruze</name></author><category term="compilation_error" /><category term="kernel" /><category term="android" /><category term="patch" /><summary type="html">The problem Following snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying error: unexpected token at start of statement.</summary></entry></feed>

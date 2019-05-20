@@ -1,0 +1,14 @@
+/* ===== Footer ===== */
+
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+    background: #FFF;
+}
+
+.footer .float-left {
+    margin-top: 10px;
+    margin-left: 15px;
+    text-transform: none;
+}

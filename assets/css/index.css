@@ -1,3 +1,10 @@
+/** import indivisual CSS **/
+
+@import "navigation.css";
+@import "footer.css";
+@import "animation.css";
+
+/** import fonts **/
 @font-face {
     font-family: 'Google Sans';
     src: url('../fonts/GoogleSans-Regular.ttf') format('truetype'),
@@ -8,6 +15,7 @@ body {
     font-family: 'Google Sans', 'Courier New', Courier, monospace;
     font-weight: 100;
     text-transform: capitalize;
+    height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -21,27 +29,8 @@ body {
     /* or add it to the track */
 }
 
-.Blink {
-    animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;
-}
-
-@keyframes blinker {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
 .alert {
     margin-top: 10px;
-}
-
-.navbar-text {
-    color: #ffe484 !important;
-    /* Supernova */
 }
 
 a {
@@ -60,34 +49,6 @@ mark {
     color: #000
 }
 
-footer {
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-    max-width: 960px;
-    background: #FFF;
-}
-
-.footer .float-left {
-    margin-top: 10px;
-    margin-left: 15px;
-}
-
-.navbar-nav .nav-item {
-    padding-left: 10px;
-}
-
-.nav.nav-social {
-    padding-right: 10px;
-}
-
-.nav-social .nav-item .fab {
-    padding-left: 5px;
-    padding-right: 5px;
-    color: #FFF;
-    font-size: 1.5em;
-}
 
 .btn-search {
     font-weight: 500;
@@ -99,29 +60,53 @@ footer {
     margin-top: 10px;
 }
 
-.nav-pills{
-	margin-top: 10px;
+.content {
+    /* margin-top: 100px; */
+    padding-top: 70px;
+    padding-bottom: 50px;
 }
 
-.content{
-    padding-top: 10px; 
-}
-
-.highlight pre{
+pre {
     padding: 10px;
-    background: #000;
-    color: #0F0;
+    background: #380C2A;
+    color: #FFFFFD;
+    border: none;
     border-radius: 5px;
 }
 
-.highlighter-rouge{
+.highlighter-rouge {
     padding: 5px;
-    background: #F3F3F3; /* Wild Sand*/
+    background: #F3F3F3;
+    /* Wild Sand*/
     color: #000;
     border: none;
     border-radius: 5px;
 }
 
-.float-left{
-    text-transform: none;
+
+.latest-posts{
+    list-style-type: none;
+}
+
+.hide{
+    display: none;
+}
+
+.tags{
+    background: #007BFF;
+    color: #FFF;
+    border: none;
+    padding: 3px 5px;
+    border-radius: 5px;
+}
+
+.tags:hover{
+    color: #FFF;
+    background: #00B444;
+}
+
+.end-of-post{
+    font-weight: bold;
+    padding-top: 5px;
+    margin: auto;
 }
