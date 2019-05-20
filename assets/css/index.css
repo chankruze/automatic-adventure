@@ -102,3 +102,8 @@ mark {
     padding-top: 5px;
     margin: auto;
 }
+
+.lnr,
+.txt1.p-b-20{
+    color: #000;
+}
