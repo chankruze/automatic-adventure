@@ -22,15 +22,15 @@
 <meta property="og:title" content="Workaround to fix unexpected token at start of statement error with clang" />
 <meta name="author" content="chankruze" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The problem Following snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying error: unexpected token at start of statement." />
-<meta property="og:description" content="The problem Following snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying error: unexpected token at start of statement." />
+<meta name="description" content="My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the actual issue, what error do we have here ? Following terminal snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying error: unexpected token at start of statement." />
+<meta property="og:description" content="My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the actual issue, what error do we have here ? Following terminal snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying error: unexpected token at start of statement." />
 <link rel="canonical" href="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" />
 <meta property="og:url" content="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" />
 <meta property="og:site_name" content="GEEKOFIA" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-05-20T07:27:34+05:30" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html","author":{"@type":"Person","name":"chankruze"},"headline":"Workaround to fix unexpected token at start of statement error with clang","dateModified":"2019-05-20T07:27:34+05:30","datePublished":"2019-05-20T07:27:34+05:30","description":"The problem Following snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying error: unexpected token at start of statement.","mainEntityOfPage":{"@type":"WebPage","@id":"/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html"},"@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html","author":{"@type":"Person","name":"chankruze"},"headline":"Workaround to fix unexpected token at start of statement error with clang","dateModified":"2019-05-20T07:27:34+05:30","datePublished":"2019-05-20T07:27:34+05:30","description":"My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the actual issue, what error do we have here ? Following terminal snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying error: unexpected token at start of statement.","mainEntityOfPage":{"@type":"WebPage","@id":"/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -158,11 +158,11 @@
   <h1>Workaround to fix unexpected token at start of statement error with clang</h1>
 </div>
 
-<p>on
+<p><i class="fas fa-calendar"></i>
   20 May 2019
   
   
-  by <a href="/authors/chankruze.html">Chandan Kumar Mandal</a>
+  <i class="fas fa-user-edit"></i> <a href="/authors/chankruze.html">Chandan Kumar Mandal</a>
   
 </p>
 
@@ -178,11 +178,17 @@
   
 </p>
 
-<h4 id="the-problem">The problem</h4>
+<p>My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error
+is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the
+actual issue, what error do we have here ?</p>
 
-<p>Following snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying <code class="highlighter-rouge">error: unexpected token at start of statement</code>.
+<p>Following terminal snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying <code class="highlighter-rouge">error: unexpected token at start of statement</code>.
 <!--excerpt--></p>
-<pre>
+
+<figure>
+<figcaption>terminal snippet</figcaption>
+<pre class="prettyprint linenums">
+<code>
 <font color="#4E9A06"><b>chankruze@hpnightowl</b></font>:<font color="#3465A4"><b>~/N00bKernel</b></font>$ ccache make ARCH=arm64 CC=clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE_PREFIX=aarch64-linux-gnu-
 @@@@@@@@@@@ 111 OPPO_BUILD_CUSTOMIZE is 
   CHK     include/config/kernel.release
@@ -230,13 +236,16 @@ Kbuild:45: recipe for target &apos;kernel/bounds.s&apos; failed
 make[1]: *** [kernel/bounds.s] Error 1
 Makefile:1129: recipe for target &apos;prepare0&apos; failed
 make: *** [prepare0] Error 2
+</code>
 </pre>
+</figure>
 
-<h4 id="how-to-fix">How to fix</h4>
+<h4 id="problem-analysis">Problem analysis</h4>
 
-<p>This was due to the characters used in <code class="highlighter-rouge">Kbuild</code> and fixed in commit <a href="https://github.com/N00bKernel/stanlee/commit/af41c50628c23bcfbe1f56756469c2e4085bc1d0">af41c50628c23bcfbe1f56756469c2e4085bc1d0</a>.</p>
+<p><code class="highlighter-rouge">KBuild</code> abuses the asm statement to write to a file and <code class="highlighter-rouge">clang</code> chokes about these invalid asm statements. Hack it even more by fooling this is actual valid asm code.
+This is fixed in commit <a href="https://github.com/N00bKernel/stanlee/commit/af41c50628c23bcfbe1f56756469c2e4085bc1d0">af41c50628c23bcfbe1f56756469c2e4085bc1d0</a>.</p>
 
-<h4 id="files-to-download">Files to download</h4>
+<h4 id="download-patch">Download patch</h4>
 
 <p>Below patch(es) can be applied to fix this issue:</p>
 <ul>
@@ -246,11 +255,34 @@ make: *** [prepare0] Error 2
 
 
 <p class="end-of-post"><i class="fas fa-terminal"></i> <span class="quick-blink">Thanks For Reading</span></p>
+
+<div id="disqus_thread"></div>
+
+<script>
+
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+  */
+
+  // var disqus_config = function () {
+  // this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  // this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  // };
+
+  (function () { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://geekofia-blog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<script src="/assets/js/run_prettify.js"></script>
     </div>
 
     <!-- Footer -->
     <!-- footer -->
-<footer class="footer fixed-bottom">
+<footer class="footer">
     <div class="float-left">
         <span>Made with <i class="fas fa-heart"></i> by <a href="https://github.com/chankruze">chankruze</a>, founder of
         </span>
@@ -271,6 +303,7 @@ make: *** [prepare0] Error 2
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/assets/js/index.js"></script>
+    <script id="dsq-count-scr" src="//geekofia.disqus.com/count.js" async></script>
 </body>
 
 </html>

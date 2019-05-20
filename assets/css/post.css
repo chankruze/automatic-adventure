@@ -1,8 +1,8 @@
-.content{
+.content {
     text-transform: none;
 }
 
-.btn-back{
+.btn-back {
     padding: 5px 10px 5px 10px;
     margin-top: 10px;
     border: 1px solid #00B444;
@@ -13,8 +13,31 @@
     float: right;
 }
 
-button:hover{
+button:hover {
     color: #FFF;
     border: none;
     background: #00B444;
+}
+
+.fa-calendar,
+.fa-user-edit {
+    padding-right: 3px;
+}
+
+.fa-user-edit {
+    padding-left: 5px;
+}
+
+pre {
+    padding: 10px;
+    font-family: monospace, monospace;
+    background: #EEEEEE;
+    border: none !important;
+    border-radius: 5px;
+}
+
+li.L0, li.L1, li.L2, li.L3, li.L4,
+li.L5, li.L6, li.L7, li.L8, li.L9 {
+  list-style-type: decimal !important;
+  background: #EEEEEE;
 }

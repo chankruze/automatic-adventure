@@ -1,8 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-05-20T11:16:11+05:30</updated><id>/feed.xml</id><title type="html">GEEKOFIA</title><subtitle>Blogs</subtitle><entry><title type="html">Workaround to fix unexpected token at start of statement error with clang</title><link href="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" rel="alternate" type="text/html" title="Workaround to fix unexpected token at start of statement error with clang" /><published>2019-05-20T07:27:34+05:30</published><updated>2019-05-20T07:27:34+05:30</updated><id>/patches/2019/05/20/unexpected-token-at-start-of-statement-patch</id><content type="html" xml:base="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html">&lt;h4 id=&quot;the-problem&quot;&gt;The problem&lt;/h4&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-05-20T16:57:16+05:30</updated><id>/feed.xml</id><title type="html">GEEKOFIA</title><subtitle>Blogs</subtitle><entry><title type="html">Workaround to fix unexpected token at start of statement error with clang</title><link href="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" rel="alternate" type="text/html" title="Workaround to fix unexpected token at start of statement error with clang" /><published>2019-05-20T07:27:34+05:30</published><updated>2019-05-20T07:27:34+05:30</updated><id>/patches/2019/05/20/unexpected-token-at-start-of-statement-patch</id><content type="html" xml:base="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html">&lt;p&gt;My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error
+is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the
+actual issue, what error do we have here ?&lt;/p&gt;
 
-&lt;p&gt;Following snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying &lt;code class=&quot;highlighter-rouge&quot;&gt;error: unexpected token at start of statement&lt;/code&gt;.
+&lt;p&gt;Following terminal snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying &lt;code class=&quot;highlighter-rouge&quot;&gt;error: unexpected token at start of statement&lt;/code&gt;.
 &lt;!--excerpt--&gt;&lt;/p&gt;
-&lt;pre&gt;
+
+&lt;figure&gt;
+&lt;figcaption&gt;terminal snippet&lt;/figcaption&gt;
+&lt;pre class=&quot;prettyprint linenums&quot;&gt;
+&lt;code&gt;
 &lt;font color=&quot;#4E9A06&quot;&gt;&lt;b&gt;chankruze@hpnightowl&lt;/b&gt;&lt;/font&gt;:&lt;font color=&quot;#3465A4&quot;&gt;&lt;b&gt;~/N00bKernel&lt;/b&gt;&lt;/font&gt;$ ccache make ARCH=arm64 CC=clang CLANG_TRIPLE=aarch64-linux-gnu- CROSS_COMPILE_PREFIX=aarch64-linux-gnu-
 @@@@@@@@@@@ 111 OPPO_BUILD_CUSTOMIZE is 
   CHK     include/config/kernel.release
@@ -50,15 +56,18 @@ Kbuild:45: recipe for target &amp;apos;kernel/bounds.s&amp;apos; failed
 make[1]: *** [kernel/bounds.s] Error 1
 Makefile:1129: recipe for target &amp;apos;prepare0&amp;apos; failed
 make: *** [prepare0] Error 2
+&lt;/code&gt;
 &lt;/pre&gt;
+&lt;/figure&gt;
 
-&lt;h4 id=&quot;how-to-fix&quot;&gt;How to fix&lt;/h4&gt;
+&lt;h4 id=&quot;problem-analysis&quot;&gt;Problem analysis&lt;/h4&gt;
 
-&lt;p&gt;This was due to the characters used in &lt;code class=&quot;highlighter-rouge&quot;&gt;Kbuild&lt;/code&gt; and fixed in commit &lt;a href=&quot;https://github.com/N00bKernel/stanlee/commit/af41c50628c23bcfbe1f56756469c2e4085bc1d0&quot;&gt;af41c50628c23bcfbe1f56756469c2e4085bc1d0&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;KBuild&lt;/code&gt; abuses the asm statement to write to a file and &lt;code class=&quot;highlighter-rouge&quot;&gt;clang&lt;/code&gt; chokes about these invalid asm statements. Hack it even more by fooling this is actual valid asm code.
+This is fixed in commit &lt;a href=&quot;https://github.com/N00bKernel/stanlee/commit/af41c50628c23bcfbe1f56756469c2e4085bc1d0&quot;&gt;af41c50628c23bcfbe1f56756469c2e4085bc1d0&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;files-to-download&quot;&gt;Files to download&lt;/h4&gt;
+&lt;h4 id=&quot;download-patch&quot;&gt;Download patch&lt;/h4&gt;
 
 &lt;p&gt;Below patch(es) can be applied to fix this issue:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://raw.githubusercontent.com/chankruze/studious-waddle/master/chankruze-001-kbuild-clang_macro_define.patch&quot;&gt;chankruze-001-kbuild-clang_macro_define.patch&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>chankruze</name></author><category term="compilation_error" /><category term="kernel" /><category term="android" /><category term="patch" /><summary type="html">The problem Following snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying error: unexpected token at start of statement.</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>chankruze</name></author><category term="compilation_error" /><category term="kernel" /><category term="android" /><category term="patch" /><summary type="html">My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the actual issue, what error do we have here ? Following terminal snippet has the error that i got while compiling kernel for Realme 2 Pro (stanlee). It was saying error: unexpected token at start of statement.</summary></entry></feed>
