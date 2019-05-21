@@ -4,14 +4,9 @@
 @import url('https://fonts.googleapis.com/css?family=Arvo');
 
 .page_404 {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-48%, 20%);
+    padding-top: 20px;
+    margin: auto;
     background: #fff;
-    font-family: 'Arvo', serif;
 }
 
 .page_404 img {

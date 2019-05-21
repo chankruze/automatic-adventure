@@ -41,3 +41,7 @@ li.L5, li.L6, li.L7, li.L8, li.L9 {
   list-style-type: decimal !important;
   background: #EEEEEE;
 }
+
+#disqus_thread{
+    padding-top: 20px;
+}
