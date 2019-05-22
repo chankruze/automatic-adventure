@@ -76,43 +76,11 @@ mark {
     border-radius: 5px;
 }
 
-.latest-posts {
+.ul-latest-posts {
     list-style-type: none;
     padding-left: 0px;
+    padding-top: 20px;
 }
-
-.hide {
-    display: none;
-}
-
-.tags {
-    border: none;
-    padding: 3px 5px;
-    border-radius: 5px;
-    background: #007BFF;
-    color: #FFF;
-}
-
-.tags-latest-post {
-    border: none;
-    padding: 3px 5px;
-    border-radius: 5px;
-    background: #FFF;
-    color: #000;
-}
-
-.tags:hover {
-    color: #FFF;
-    background: #00B444;
-    cursor: pointer;
-}
-
-/* .tags-latest-post:hover {
-    cursor: pointer;
-    background: #007BFF;
-    color: #FFF;
-    cursor: pointer;
-} */
 
 .end-of-post {
     font-weight: bold;
@@ -132,10 +100,33 @@ mark {
     float: right;
 }
 
-.fa-latest-posts {
+.icon-latest-posts {
     padding-left: 15px;
 }
 
 .fa-comments {
     padding-right: 5px;
+}
+
+.post-img-box {
+    max-height: 240px;
+    max-width: inherit;
+    text-align: center;
+}
+
+.post-image {
+    max-height: 100%;
+    max-width: 240px;
+}
+
+.icon-share {
+    font-size: 1.5em;
+}
+
+.post-bottom {
+    padding-top: 10px;
+}
+
+.social-share {
+    padding-top: 5px;
 }
