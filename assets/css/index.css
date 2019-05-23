@@ -7,8 +7,8 @@
 /** import fonts **/
 @font-face {
     font-family: 'Google Sans';
-    src: url('../fonts/GoogleSans-Regular.ttf') format('truetype'),
-        url('../fonts/GoogleSans-Bold.ttf') format('truetype');
+    src: url('../fonts/GoogleSans/GoogleSans-Regular.ttf') format('truetype'),
+        url('../fonts/GoogleSans/GoogleSans-Bold.ttf') format('truetype');
 }
 
 body {
@@ -112,7 +112,7 @@ mark {
 }
 
 .post-image {
-    max-height: 100%;
+    max-height: 240px;
     max-width: 240px;
 }
 

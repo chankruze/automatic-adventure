@@ -1,11 +1,16 @@
 /*======================
     404 page
 =======================*/
-@import url('https://fonts.googleapis.com/css?family=Arvo');
+@font-face {
+    font-family: 'Arvo';
+    src: url('../fonts/Arvo/Arvo-Regular.ttf') format('truetype'),
+        url('../fonts/Arvo/Arvo-Bold.ttf') format('truetype');
+}
 
 .page_404 {
     padding-top: 20px;
     text-align: center;
+    font-family: "Arvo";
 }
 
 .four_zero_four_bg {
