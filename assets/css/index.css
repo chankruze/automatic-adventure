@@ -112,8 +112,13 @@ mark {
 }
 
 .post-image {
-    max-height: 240px;
-    max-width: 240px;
+    max-height: inherit;
+    max-width: inherit;
+    transition: transform .5s;
+}
+
+.post-image:hover {
+    transform: scale(1.2);
 }
 
 .icon-share {
@@ -130,6 +135,12 @@ mark {
 
 .icon-latest-posts{
     padding-left: 10px !important;
+}
+
+@media (max-width: 1200px) {
+    .post-image {
+        max-width: 290px; 
+    }
 }
 
 @media (max-width: 992px) {
