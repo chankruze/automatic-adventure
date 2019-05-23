@@ -20,11 +20,14 @@ button:hover {
 }
 
 .fa-calendar,
-.fa-user-edit {
+.fa-user-edit,
+.fa-folder{
     padding-right: 5px;
+    font-size: 1.2em;
 }
 
-.fa-user-edit {
+.fa-user-edit.icon-post,
+.fa-folder {
     padding-left: 5px;
 }
 
@@ -52,4 +55,19 @@ li.L9 {
 
 #disqus_thread {
     padding-top: 20px;
+}
+
+.tags,
+.categories{
+    color: #FFF;
+    background: #007BFF;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+}
+
+.tags:hover,
+.categories:hover{
+    background: #aaa;
+    color: #FFF;
 }

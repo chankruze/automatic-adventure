@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/assets/css/404.css">
     <link rel="stylesheet" href="/assets/css/post.css">
     <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="GEEKOFIA" />
-    <!-- Begin Jekyll SEO tag v2.6.0 -->
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Workaround to fix unexpected token at start of statement error with clang | GEEKOFIA</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="Workaround to fix unexpected token at start of statement error with clang" />
@@ -24,13 +24,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the actual issue, what error do we have here ?" />
 <meta property="og:description" content="My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the actual issue, what error do we have here ?" />
-<link rel="canonical" href="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" />
-<meta property="og:url" content="/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" />
+<link rel="canonical" href="/android/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" />
+<meta property="og:url" content="/android/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" />
 <meta property="og:site_name" content="GEEKOFIA" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-05-20T07:27:34+05:30" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","url":"/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html","author":{"@type":"Person","name":"chankruze"},"headline":"Workaround to fix unexpected token at start of statement error with clang","dateModified":"2019-05-20T07:27:34+05:30","datePublished":"2019-05-20T07:27:34+05:30","description":"My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the actual issue, what error do we have here ?","mainEntityOfPage":{"@type":"WebPage","@id":"/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html"},"@context":"https://schema.org"}</script>
+{"@type":"BlogPosting","url":"/android/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html","author":{"@type":"Person","name":"chankruze"},"headline":"Workaround to fix unexpected token at start of statement error with clang","dateModified":"2019-05-20T07:27:34+05:30","datePublished":"2019-05-20T07:27:34+05:30","description":"My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the actual issue, what error do we have here ?","mainEntityOfPage":{"@type":"WebPage","@id":"/android/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -57,40 +57,47 @@
             <li class="nav-item">
                 <a href="/" class="nav-link" data-toggle="tooltip" title="Latest Blog Posts"
                     >
-                    Recent Blogs
+                    Latest
                 </a>
             </li>
             
             <li class="nav-item">
-                <a href="/android/" class="nav-link" data-toggle="tooltip" title="Latest Android Posts"
+                <a href="/category/android/" class="nav-link" data-toggle="tooltip" title="Latest Android Posts"
                     >
                     Android
                 </a>
             </li>
             
             <li class="nav-item">
-                <a href="/programming/" class="nav-link" data-toggle="tooltip" title="Latest Programming Posts"
+                <a href="/category/programming/" class="nav-link" data-toggle="tooltip" title="Latest Programming Posts"
                     >
                     Programming
                 </a>
             </li>
             
             <li class="nav-item">
-                <a href="/hacking/" class="nav-link" data-toggle="tooltip" title="Latest Cyber Security Blog Posts"
+                <a href="/category/cyber-security/" class="nav-link" data-toggle="tooltip" title="Latest Cyber Security Blog Posts"
                     >
                     Cyber Security
                 </a>
             </li>
             
             <li class="nav-item">
-                <a href="/ctf/" class="nav-link" data-toggle="tooltip" title="Latest CTF Posts"
+                <a href="/category/patches/" class="nav-link" data-toggle="tooltip" title="Latest Cyber Security Blog Posts"
+                    >
+                    Patches
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a href="/category/ctf/" class="nav-link" data-toggle="tooltip" title="Latest CTF Posts"
                     >
                     CTF
                 </a>
             </li>
             
             <li class="nav-item">
-                <a href="/miscellaneous/" class="nav-link" data-toggle="tooltip" title="Miscellaneous Blog Posts"
+                <a href="/category/miscellaneous/" class="nav-link" data-toggle="tooltip" title="Miscellaneous Blog Posts"
                     >
                     Miscellaneous
                 </a>
@@ -118,20 +125,12 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     
-                    <a href="/tags/compilation_error/" class="dropdown-item">
-                        compilation_error
-                    </a>
-                    
                     <a href="/tags/kernel/" class="dropdown-item">
                         kernel
                     </a>
                     
-                    <a href="/tags/android/" class="dropdown-item">
-                        android
-                    </a>
-                    
-                    <a href="/tags/patch/" class="dropdown-item">
-                        patch
+                    <a href="/tags/compilation_error/" class="dropdown-item">
+                        compilation_error
                     </a>
                     
                 </div>
@@ -158,23 +157,26 @@
   <h1>Workaround to fix unexpected token at start of statement error with clang</h1>
 </div>
 
-<p><i class="fas fa-calendar"></i>
+<p>
+  <i class="fas fa-calendar"></i>
   20 May 2019
+  <i class="fas fa-user-edit icon-post"></i>
   
   
-  <i class="fas fa-user-edit"></i> <a href="/authors/chankruze.html">Chandan Kumar Mandal</a>
+  <a href="/authors/chankruze.html">Chandan Kumar Mandal</a>
+  
+  <i class="fas fa-folder"></i>
+  
+  <a class="categories" href="/category/android/">android</a></li>
+  
+  <a class="categories" href="/category/patches/">patches</a></li>
   
 </p>
-
 <p><i class="fas fa-tags"></i>
-  
-  <a class="tags" href="/tags/compilation_error/">compilation_error</a>
   
   <a class="tags" href="/tags/kernel/">kernel</a>
   
-  <a class="tags" href="/tags/android/">android</a>
-  
-  <a class="tags" href="/tags/patch/">patch</a>
+  <a class="tags" href="/tags/compilation_error/">compilation_error</a>
   
 </p>
 
@@ -293,7 +295,6 @@ This is fixed in commit <a href="https://github.com/N00bKernel/stanlee/commit/af
     <script src="/assets/js/popper.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="/assets/js/index.js"></script>
-    <script id="dsq-count-scr" src="//geekofia.disqus.com/count.js" async></script>
 </body>
 
 </html>
