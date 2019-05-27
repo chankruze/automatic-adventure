@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-05-26T15:52:12+05:30</updated><id>/feed.xml</id><title type="html">GEEKOFIA</title><subtitle>Blog Domain Of GEEKOFIA.</subtitle><entry><title type="html">How to install Django in virtual environment</title><link href="/programming/2019/05/26/install-django-in-virtual-environment.html" rel="alternate" type="text/html" title="How to install Django in virtual environment" /><published>2019-05-26T13:58:12+05:30</published><updated>2019-05-26T13:58:12+05:30</updated><id>/programming/2019/05/26/install-django-in-virtual-environment</id><content type="html" xml:base="/programming/2019/05/26/install-django-in-virtual-environment.html">&lt;p&gt;Hello fellas, in this post we are going to see how we can install django in a virtual environment instead of installing to our workspace.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-05-28T01:25:14+05:30</updated><id>/feed.xml</id><title type="html">GEEKOFIA</title><subtitle>Blog Domain Of GEEKOFIA.</subtitle><entry><title type="html">How to install Django in virtual environment</title><link href="/programming/2019/05/26/install-django-in-virtual-environment.html" rel="alternate" type="text/html" title="How to install Django in virtual environment" /><published>2019-05-26T13:58:12+05:30</published><updated>2019-05-26T13:58:12+05:30</updated><id>/programming/2019/05/26/install-django-in-virtual-environment</id><content type="html" xml:base="/programming/2019/05/26/install-django-in-virtual-environment.html">&lt;p&gt;Hello fellas, in this post we are going to see how we can install django in a virtual environment instead of installing to our workspace.
 Before we begin i want to let you know that there are several ways to install django. Ofiicial installation doc is available &lt;a href=&quot;https://docs.djangoproject.com/en/2.2/intro/install/&quot;&gt;here&lt;/a&gt;. Let’s begin …
 &lt;!--excerpt--&gt;&lt;/p&gt;
 
@@ -18,28 +18,28 @@ Before we begin i want to let you know that there are several ways to install dj
 &lt;h3 id=&quot;setup-virtual-environment&quot;&gt;Setup Virtual Environment&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;Install python virtual environment by below command
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install virtualenv
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;virtualenv
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;Test the installation
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export PATH=$PATH:/home/&amp;lt;USER_NAME&amp;gt;/.local/bin
-virtualenv --version
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$PATH&lt;/span&gt;:/home/&amp;lt;USER_NAME&amp;gt;/.local/bin
+virtualenv &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;If your installation is successful, you will get a version more then or equals to &lt;code class=&quot;highlighter-rouge&quot;&gt;16.4.3&lt;/code&gt;. Now we can create a new virtual environment for our django installation.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;Create a virtual environment
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;virtualenv &amp;lt;your_venv_name&amp;gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;virtualenv &amp;lt;your_venv_name&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;for example if you want to create a virtual environment which name would be &lt;code class=&quot;highlighter-rouge&quot;&gt;hello_venv&lt;/code&gt; then you have to execute &lt;code class=&quot;highlighter-rouge&quot;&gt;virtualenv hello_venv&lt;/code&gt; in the terminal.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;Specify python interpreter
 Now we will set which python interpreter to use as default in virtual environment we created. It is very useful, unlike our local system which use python2 when we call python, in virtual environment we can change that executing below line of command:
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;virtualenv -p /usr/bin/python3 &amp;lt;your_venv_name&amp;gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;virtualenv &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; /usr/bin/python3 &amp;lt;your_venv_name&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;Activate Virtual Environment
 Now as we all set, it’s time to activate the virtual environment we just created.
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;source venv_name/bin/activate
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;venv_name/bin/activate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;Now you should have noticed the change in your terminal, your virtual environment name in a pair of parenthesis before your username. That implies you are now inside your virtual environment. All the packages you install, chages you made all will be inside this environment. The environment is a folder having your virtual env. name.
 Don’t worry if you didn’t get what i mean, i will attach screenshots &amp;amp; terminal snippet for better understanding.&lt;/p&gt;
@@ -51,15 +51,15 @@ Don’t worry if you didn’t get what i mean, i will attach screenshots &amp;am
 
 &lt;ul&gt;
   &lt;li&gt;Install Django
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install Django
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;Django
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;You can also specify a particular version of django by mentioning it’s version, like below command:&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install Django==2.2
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Django&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;2.2
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
   &lt;li&gt;Verify Django installation
 Now to verify our django installation execute below lines:
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python -m django --version
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;python &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; django &lt;span class=&quot;nt&quot;&gt;--version&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
@@ -70,29 +70,25 @@ Now to verify our django installation execute below lines:
 
 &lt;ul&gt;
   &lt;li&gt;Deactiave virtual environment
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;deactivate
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;deactivate
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
     &lt;p&gt;That’s it, you installed virtual environment package, created &amp;amp; activated a virtual environment, inside that you installed django and after your finished you deactivated that environment. cool !&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure&gt;
-&lt;figcaption&gt;My terminal snippet&lt;/figcaption&gt;
-&lt;pre class=&quot;prettyprint linenums&quot;&gt;
-&lt;code&gt;
-chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia$ virtualenv hello_venv
-Using base prefix '/usr'
-New python executable in /home/chankruze/Documents/chankruze/web_dev/jekyll_dev/geekofia/hello_venv/bin/python3
-Also creating executable in /home/chankruze/Documents/chankruze/web_dev/jekyll_dev/geekofia/hello_venv/bin/python
+&lt;p&gt;My terminal snippet&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;virtualenv hello_venv
+Using base prefix &lt;span class=&quot;s1&quot;&gt;'/usr'&lt;/span&gt;
+New python executable &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; /home/chankruze/Documents/chankruze/web_dev/jekyll_dev/geekofia/hello_venv/bin/python3
+Also creating executable &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; /home/chankruze/Documents/chankruze/web_dev/jekyll_dev/geekofia/hello_venv/bin/python
 Installing setuptools, pip, wheel...
-done.
-chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia$ source hello_venv/bin/activate
-(hello_venv) chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia$ cd
-(hello_venv) chankruze@geekofia:~$ deactivate 
-chankruze@geekofia:~$
-&lt;/code&gt;
-&lt;/pre&gt;
-&lt;/figure&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;hello_venv/bin/activate
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;hello_venv&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;hello_venv&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; chankruze@geekofia:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;deactivate 
+chankruze@geekofia:~&lt;span class=&quot;err&quot;&gt;$&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;I hope this post is helpful !&lt;/p&gt;</content><author><name>chankruze</name></author><category term="howto" /><category term="django" /><category term="guide" /><summary type="html">Hello fellas, in this post we are going to see how we can install django in a virtual environment instead of installing to our workspace. Before we begin i want to let you know that there are several ways to install django. Ofiicial installation doc is available here. Let’s begin …</summary></entry><entry><title type="html">Workaround to fix unexpected token at start of statement error with clang</title><link href="/android/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html" rel="alternate" type="text/html" title="Workaround to fix unexpected token at start of statement error with clang" /><published>2019-05-20T07:27:34+05:30</published><updated>2019-05-20T07:27:34+05:30</updated><id>/android/patches/2019/05/20/unexpected-token-at-start-of-statement-patch</id><content type="html" xml:base="/android/patches/2019/05/20/unexpected-token-at-start-of-statement-patch.html">&lt;p&gt;My life is a litle bit weired. I never got success on first attempt, there is always some errors, bugs. So, now-a-days seeing an error
 is a normal thing for me. To be honest i think if there were no struggle to get things working, maybe i couldn’t be here. Now come to the

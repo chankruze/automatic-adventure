@@ -163,8 +163,10 @@
 
     <div class="container content">
         <!-- Rendered Content-->
-        <div>
-  <button class="btn-back" onclick="goBack()">Go Back</button>
+        <script src="/assets/js/prism.js"></script>
+
+<div>
+  <!-- <button class="btn-back" onclick="goBack()">Go Back</button> -->
   <h1>How to install Django in virtual environment</h1>
 </div>
 
@@ -176,12 +178,12 @@
   
   <a href="/authors/chankruze.html">Chandan Kumar Mandal</a>
   
-  <i class="fas fa-folder"></i>
+</p>
+<p><i class="fas fa-folder"></i>
   
   <a class="categories" href="/category/programming/">programming</a></li>
   
-</p>
-<p><i class="fas fa-tags"></i>
+  <i class="fas fa-tags"></i>
   
   <a class="tags" href="/tags/howto/">howto</a>
   
@@ -211,28 +213,28 @@ Before we begin i want to let you know that there are several ways to install dj
 <h3 id="setup-virtual-environment">Setup Virtual Environment</h3>
 <ul>
   <li>Install python virtual environment by below command
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install virtualenv
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>virtualenv
 </code></pre></div>    </div>
   </li>
   <li>Test the installation
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PATH=$PATH:/home/&lt;USER_NAME&gt;/.local/bin
-virtualenv --version
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/home/&lt;USER_NAME&gt;/.local/bin
+virtualenv <span class="nt">--version</span>
 </code></pre></div>    </div>
     <p>If your installation is successful, you will get a version more then or equals to <code class="highlighter-rouge">16.4.3</code>. Now we can create a new virtual environment for our django installation.</p>
   </li>
   <li>Create a virtual environment
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv &lt;your_venv_name&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv &lt;your_venv_name&gt;
 </code></pre></div>    </div>
     <p>for example if you want to create a virtual environment which name would be <code class="highlighter-rouge">hello_venv</code> then you have to execute <code class="highlighter-rouge">virtualenv hello_venv</code> in the terminal.</p>
   </li>
   <li>Specify python interpreter
 Now we will set which python interpreter to use as default in virtual environment we created. It is very useful, unlike our local system which use python2 when we call python, in virtual environment we can change that executing below line of command:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv -p /usr/bin/python3 &lt;your_venv_name&gt;
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv <span class="nt">-p</span> /usr/bin/python3 &lt;your_venv_name&gt;
 </code></pre></div>    </div>
   </li>
   <li>Activate Virtual Environment
 Now as we all set, it’s time to activate the virtual environment we just created.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source venv_name/bin/activate
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source </span>venv_name/bin/activate
 </code></pre></div>    </div>
     <p>Now you should have noticed the change in your terminal, your virtual environment name in a pair of parenthesis before your username. That implies you are now inside your virtual environment. All the packages you install, chages you made all will be inside this environment. The environment is a folder having your virtual env. name.
 Don’t worry if you didn’t get what i mean, i will attach screenshots &amp; terminal snippet for better understanding.</p>
@@ -244,15 +246,15 @@ Don’t worry if you didn’t get what i mean, i will attach screenshots &amp; t
 
 <ul>
   <li>Install Django
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install Django
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>Django
 </code></pre></div>    </div>
     <p>You can also specify a particular version of django by mentioning it’s version, like below command:</p>
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install Django==2.2
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span><span class="nv">Django</span><span class="o">==</span>2.2
 </code></pre></div>    </div>
   </li>
   <li>Verify Django installation
 Now to verify our django installation execute below lines:
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -m django --version
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> django <span class="nt">--version</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -263,35 +265,37 @@ Now to verify our django installation execute below lines:
 
 <ul>
   <li>Deactiave virtual environment
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deactivate
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deactivate
 </code></pre></div>    </div>
     <p>That’s it, you installed virtual environment package, created &amp; activated a virtual environment, inside that you installed django and after your finished you deactivated that environment. cool !</p>
   </li>
 </ul>
 
-<figure>
-<figcaption>My terminal snippet</figcaption>
-<pre class="prettyprint linenums">
-<code>
-chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia$ virtualenv hello_venv
-Using base prefix '/usr'
-New python executable in /home/chankruze/Documents/chankruze/web_dev/jekyll_dev/geekofia/hello_venv/bin/python3
-Also creating executable in /home/chankruze/Documents/chankruze/web_dev/jekyll_dev/geekofia/hello_venv/bin/python
+<p>My terminal snippet</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia<span class="nv">$ </span>virtualenv hello_venv
+Using base prefix <span class="s1">'/usr'</span>
+New python executable <span class="k">in</span> /home/chankruze/Documents/chankruze/web_dev/jekyll_dev/geekofia/hello_venv/bin/python3
+Also creating executable <span class="k">in</span> /home/chankruze/Documents/chankruze/web_dev/jekyll_dev/geekofia/hello_venv/bin/python
 Installing setuptools, pip, wheel...
-done.
-chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia$ source hello_venv/bin/activate
-(hello_venv) chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia$ cd
-(hello_venv) chankruze@geekofia:~$ deactivate 
-chankruze@geekofia:~$
-</code>
-</pre>
-</figure>
+<span class="k">done</span><span class="nb">.</span>
+chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia<span class="nv">$ </span><span class="nb">source </span>hello_venv/bin/activate
+<span class="o">(</span>hello_venv<span class="o">)</span> chankruze@geekofia:~/Documents/chankruze/web_dev/jekyll_dev/geekofia<span class="nv">$ </span><span class="nb">cd</span>
+<span class="o">(</span>hello_venv<span class="o">)</span> chankruze@geekofia:~<span class="nv">$ </span>deactivate 
+chankruze@geekofia:~<span class="err">$</span>
+</code></pre></div></div>
 
 <p>I hope this post is helpful !</p>
 
 
 
+<p align="center"><b>o EOP o</b></p>
+
 <hr>
+<div class="blog-navigation-buttons">
+  <a class="button  prev-post-button float-left" href="/blog">← Previous</a>
+  <a class="button  next-post-button float-right" href="/blog">Next Post →</a>
+  </div>
 
 <div class="related-posts">
 
